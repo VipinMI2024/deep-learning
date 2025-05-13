@@ -1,93 +1,127 @@
-Fashion-MNIST Classification Project
-Overview
-This project involves training a neural network to classify images from the Fashion-MNIST dataset into 10 categories of clothing items. The goal was to explore deep learning concepts and achieve a solid accuracy while setting the stage for future NLP-related extensions, such as generating fashion captions.
-Dataset
+# Fashion-MNIST Classification Project
 
-Source: Fashion-MNIST dataset
-Training Data: 60,000 grayscale images (28x28 pixels)
-Test Data: 10,000 grayscale images (28x28 pixels)
-Classes (10 categories):
-0: T-shirt/top
-1: Trouser
-2: Pullover
-3: Dress
-4: Coat
-5: Sandal
-6: Shirt
-7: Sneaker
-8: Bag
-9: Ankle boot
+## 🧾 Overview
 
+This deep learning project uses the Fashion-MNIST dataset to train a neural network that classifies grayscale images of clothing into one of ten categories. The aim is to build a solid baseline model, explore model performance, and eventually extend the project to include natural language tasks such as fashion captioning.
 
+---
 
-Model Architecture
+## 📂 Dataset
 
-Type: Sequential neural network
-Layers:
-Flatten: Converts 28x28 images to a 784-element vector
-Dense (32 units, ReLU activation): 25,120 parameters
-Dense (10 units, Softmax activation): 330 parameters
+* **Source**: Fashion-MNIST (by Zalando, available in TensorFlow/Keras)
+* **Train Set**: 60,000 images
+* **Test Set**: 10,000 images
+* **Image Size**: 28x28 pixels (grayscale)
+* **Classes**:
 
+  ```
+  0: T-shirt/top    5: Sandal
+  1: Trouser        6: Shirt
+  2: Pullover       7: Sneaker
+  3: Dress          8: Bag
+  4: Coat           9: Ankle boot
+  ```
 
-Total Parameters: 25,450 (94.41 KB)
-Trainable Parameters: 25,450
-Non-trainable Parameters: 0
-Optimizer: Adam
-Loss Function: Sparse Categorical Crossentropy
-Metrics: Accuracy
+---
 
-Training
+## 🧠 Model Architecture
 
-Epochs: 10
-Training Progress:
-Epoch 1: Accuracy: 0.8023, Loss: 0.7316
-Epoch 5: Accuracy: 0.8702, Loss: 0.3585
-Epoch 10: Accuracy: 0.8845, Loss: 0.3221
+* **Type**: Sequential neural network
+* **Layers**:
 
+  * `Flatten`: Converts 28x28 image to 784-dim vector
+  * `Dense(32, activation='relu')`: Fully connected layer (25,120 parameters)
+  * `Dense(10, activation='softmax')`: Output layer (10 classes)
+* **Total Parameters**: 25,450
+* **Optimizer**: Adam
+* **Loss Function**: Sparse Categorical Crossentropy
+* **Metric**: Accuracy
 
+---
 
-Results
+## 📈 Training Summary
 
-Test Accuracy: 87%
-Classification Report:
-Precision, Recall, F1-Score (Macro Avg): 0.87
-Support: 10,000 images
-Notable: Classes like T-shirt/top (0.83 F1-score) and Ankle boot (0.95 F1-score) performed well, while Shirt (0.65 F1-score) struggled.
+* **Epochs**: 10
 
+| Epoch | Accuracy | Loss   |
+| ----- | -------- | ------ |
+| 1     | 0.8023   | 0.7316 |
+| 5     | 0.8702   | 0.3585 |
+| 10    | 0.8845   | 0.3221 |
 
-Confusion Matrix:
-Strong diagonal (correct predictions), but some confusion between similar classes (e.g., Pullover vs. Shirt, Sandal vs. Sneaker).
+---
 
+## ✅ Results
 
-Sample Predictions:
-Correct: Ankle boot predicted as Ankle boot, Trouser predicted as Trouser.
-Incorrect: Sandal predicted as Sneaker, Pullover predicted as Shirt.
+* **Test Accuracy**: **87%**
+* **Classification Metrics (Macro Avg)**:
 
+  * Precision: \~0.87
+  * Recall: \~0.87
+  * F1-Score: \~0.87
+  * Support: 10,000 images
+* **Per-Class Observations**:
 
+  * High F1-Score: Ankle boot (0.95), Trouser (0.93)
+  * Lower F1-Score: Shirt (0.65), Pullover (0.72)
 
-Visualizations
+---
 
-Confusion Matrix: Heatmap showing prediction distribution across classes.
-Sample Predictions: Visualized 25 test images with actual vs. predicted labels.
+## 🔍 Confusion Matrix Insights
 
-Requirements
+* Strong diagonal (many correct predictions)
+* Common misclassifications:
 
-Python 3.x
-Libraries:
-TensorFlow/Keras
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
+  * Pullover ↔ Shirt
+  * Sandal ↔ Sneaker
 
+---
 
+## 🖼 Visualizations
 
-Future Improvements
+* **Confusion Matrix**: Heatmap of predicted vs. true labels
+* **Sample Predictions**:
 
-Experiment with convolutional neural networks (CNNs) for better image classification.
-Add data augmentation to improve model robustness.
-Explore NLP extensions, such as using a pre-trained model like BERT to generate fashion captions based on predicted classes.
+  * ✅ Correct: Ankle boot → Ankle boot, Trouser → Trouser
+  * ❌ Incorrect: Sandal → Sneaker, Pullover → Shirt
 
-License
-This project is licensed under the MIT License.
-# deep-learning
+---
+
+## ⚙️ Requirements
+
+* **Python** 3.x
+* **Libraries**:
+
+  ```bash
+  pip install tensorflow numpy matplotlib seaborn scikit-learn
+  ```
+
+---
+
+## 🚀 Future Improvements
+
+* Upgrade to a Convolutional Neural Network (CNN) for better accuracy
+* Introduce data augmentation to increase generalization
+* Extend to NLP: generate fashion-related captions using models like BERT or GPT
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributions
+
+Contributions are welcome! Open an issue or submit a pull request.
+
+---
+
+## 📬 Contact
+
+For any questions, feel free to reach out via [GitHub](https://github.com/VipinMI2024).
+
+---
+
+**Built by Vipin Mishra - [GitHub](https://github.com/VipinMI2024)**
